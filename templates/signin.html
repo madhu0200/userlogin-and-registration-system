@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+    <div class="body">
+        <div class="origin">
+            <form action="{% url 'signin' %}" method="post"> <h1>signin form</h1>
+                <table  class="table table-borderless">
+                    
+                        <tr>
+                        <td colspan="2">
+                            <label for="email" class="form-label">email</label>
+                            <input type="email" name="email"id="email"  class="form-control">
+                        </td>
+                    </tr>
+                <tr><td colspan="2"><label for="password" class="form-label">password</label>
+                <input type="password" id="password" name="password" class="form-control"></td></tr>
+                <tr><td colspan="2" class="submit-btn">
+                    <input class="btn btn-primary" type="submit" value="Submit">
+                </td></tr>
+            </table>
+            </form>
+
+        </div>
+
+    </div>
+{% endblock %}

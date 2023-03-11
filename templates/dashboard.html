@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+
+                <strong> Message:</strong>{{ message }}
+            </div>
+{% endfor %}
+<div class="body">
+        <div class="origin">
+
+                <table  class="table table-borderless">
+                    <tr>
+                        <td>
+                            <label for="name"  class="form-label">First Name</label>
+                            <input type="text" name="first name" id="first_name" class="form-control" value={{user.first_name}} readonly required>
+                        </td>
+                        <td>
+                            <label for="name" class="form-label">Last Name</label>
+                            <input type="text" name="last name" id="last_name" class="form-control" value={{user.last_name}} readonly required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label for="email" class="form-label">email</label>
+                            <input type="email"  name="email" id="email" class="form-control" value={{user.email}} readonly required>
+                        </td>
+                    </tr>
+                <tr ><td colspan="2"><label for="password" class="form-label">phone no</label>
+                <input type="number" id="password" name="mobile_no"class="form-control" value={{user.mobile}} readonly required></td></tr>
+
+                <tr><td colspan="2"><label for="password" class="form-label">password</label>
+                <input type="text" id="password" name="password" class="form-control" value={{user.password}} readonly required></td></tr>
+                <tr><td colspan="2" class="submit-btn">
+                    <a href="{% url 'changepassword' %}"><button class="btn btn-link" >change password</button> </a>
+                </td>
+                </tr>
+                    <tr><td colspan="2" class="submit-btn">
+
+                    <a href="{% url 'signout' %}"> <button class="btn btn-primary">signout</button> </a>
+                </td></tr>
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
