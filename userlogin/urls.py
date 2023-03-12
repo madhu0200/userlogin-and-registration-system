@@ -9,5 +9,7 @@ urlpatterns = [
     path('signout/',signout.as_view(),name='signout'),
     #path('activate/<uidb64>/<token>', activate, name='activate'),
     path('otp/',otp.as_view(),name='otp'),
-    path('changepassword',changepassword.as_view(),name='changepassword')
+    path('changepassword',changepassword.as_view(),name='changepassword'),
+    path('forgotpassword',forgotpassword.as_view(),name='forgotpassword'),
+    path('updatepassword',updatepassword.as_view(),name='updatepassword'),
 ]

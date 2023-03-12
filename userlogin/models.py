@@ -13,8 +13,14 @@ class customer(models.Model):
     password=models.CharField(max_length=25)
     is_active=models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.username
+
 
 class userotp(models.Model):
     email=models.CharField(unique=True,max_length=25)
     otp=models.IntegerField()
+
+    def __str__(self):
+        return self.email
 
